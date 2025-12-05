@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esfahan_Knauf_Plus</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+<style>
+/* پایه */
+body { font-family: 'Vazirmatn', sans-serif; margin:0; padding:0; direction:rtl; background:#f4f4f4; color:#333; scroll-behavior: smooth; }
+a { text-decoration:none; color:inherit; }
+h2 { text-align:center; color:#222; margin-bottom:40px; font-size:28px; }
+
+/* هدر */
+header { background:linear-gradient(135deg,#ff9800,#ff5722); color:white; padding:60px 20px; text-align:center; position:relative; overflow:hidden; }
+header h1 { font-size:36px; margin:0; }
+header p { font-size:18px; margin:10px 0; }
+header a { display:inline-block; margin-top:20px; padding:14px 30px; background:#fff; color:#ff5722; border-radius:50px; font-weight:bold; transition:0.3s; }
+header a:hover { background:#ffe0b2; }
+
+/* بخش‌ها */
+section { padding:60px 20px; max-width:1200px; margin:auto; opacity:0; transform: translateY(50px); transition: all 0.8s ease;}
+section.visible { opacity:1; transform: translateY(0); }
+
+/* اسلایدر */
+.slider { position:relative; overflow:hidden; max-width:100%; margin:auto; border-radius:10px; }
+.slides { display:flex; transition: transform 0.7s ease-in-out; }
+.slide { min-width:100%; box-sizing:border-box; transform: scale(0.95); opacity:0.7; transition: all 0.5s ease-in-out; border-radius:10px; }
+.slide.active { transform: scale(1); opacity:1; }
+.slide img { width:100%; height:300px; object-fit:cover; border-radius:10px; }
+.slider-buttons { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; transform:translateY(-50%); }
+.slider-buttons button { background:rgba(0,0,0,0.5); color:white; border:none; padding:12px; border-radius:50%; cursor:pointer; font-size:20px; transition:0.3s; }
+.slider-buttons button:hover { background:rgba(0,0,0,0.8); }
+
+/* کارت‌ها */
+.grid { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+.card { background:white; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); width:280px; transition: transform 0.3s, box-shadow 0.3s; }
+.card:hover { transform: translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+.card img { width:100%; height:180px; object-fit:cover; }
+.card h3 { margin:15px 10px 5px; font-size:20px; color:#222; }
+.card p { margin:5px 10px 15px; font-size:16px; color:#555; }
+.card button { margin:0 10px 15px; padding:12px 25px; background:#ff5722; color:white; border:none; border-radius:50px; font-weight:bold; cursor:pointer; transition:0.3s; }
+.card button:hover { background:#e64a19; }
+
+/* نکات آموزشی */
+.tips ul { list-style: none; padding:0; max-width:700px; margin:auto; }
+.tips li { background:white; padding:18px 25px; border-radius:12px; margin-bottom:15px; box-shadow:0 6px 15px rgba(0,0,0,0.05); }
+
+/* فرم تماس */
+form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:15px; background:white; padding:30px; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.1); }
+input, textarea { padding:14px; border:1px solid #ccc; border-radius:12px; font-size:16px; }
+button.submit { padding:14px; background:#ff5722; color:white; border:none; border-radius:50px; font-size:16px; cursor:pointer; font-weight:bold; transition:0.3s; }
+button.submit:hover { background:#e64a19; }
+
+/* شبکه اجتماعی */
+.social { text-align:center; font-size:18px; margin-top:20px; }
+.social a { margin:0 10px; display:inline-flex; align-items:center; gap:6px; padding:8px 12px; border-radius:8px; background:#fff; color:#ff5722; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; }
+.social a:hover { background:#ffe0b2; }
+
+/* CTA ثابت */
+.fixed-cta { position:fixed; bottom:25px; right:25px; background:#ff5722; color:white; padding:18px 35px; border-radius:50px; font-weight:bold; box-shadow:0 6px 20px rgba(0,0,0,0.3); cursor:pointer; animation: pulse 2s infinite; z-index:1000; transition:0.3s; }
+.fixed-cta:hover { background:#e64a19; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+@media (max-width:768px){
+    .grid { flex-direction:column; align-items:center; }
+    header h1 { font-size:28px; }
+    header p { font-size:16px; }
+    h2 { font-size:24px; }
+    .slide img { height:220px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Esfahan_Knauf_Plus</h1>
+    <p>ایده‌ها و تکنیک‌های کناف و نورپردازی حرفه‌ای – پروژه‌های واقعی و نکات روزانه</p>
+    <a href="#portfolio">مشاهده نمونه کارها</a>
+</header>
+
+<section id="portfolio">
+    <h2>نمونه کارها</h2>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active"><img src="project1.jpg" alt="پروژه 1"></div>
+            <div class="slide"><img src="project2.jpg" alt="پروژه 2"></div>
+            <div class="slide"><img src="project3.jpg" alt="پروژه 3"></div>
+        </div>
+        <div class="slider-buttons">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<section id="tips" class="tips">
+    <h2>نکات کوتاه آموزشی</h2>
+    <ul>
+        <li>نور مخفی سقف را ۵۰ سانتیمتر از لبه نصب کنید.</li>
+        <li>ترکیب نور گرم و سرد حس مدرن ایجاد می‌کند.</li>
+        <li>نورپردازی دیوار کناف با LED انعطاف‌پذیر جلوه بیشتری دارد.</li>
+    </ul>
+</section>
+
+<section id="products">
+    <h2>محصولات قابل فروش</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="led1.jpg" alt="LED سقفی">
+            <h3>نور LED مخفی سقف</h3>
+            <p>قیمت: 500,000 تومان</p>
+            <button onclick="window.location.href='https://wa.me/***********'">سفارش دهید</button>
+        </div>
+        <div class="card">
+            <img src="panel.jpg" alt="پنل نور">
+            <h3>پنل نور سقفی</h3>
+            <p>قیمت: 350,000 تومان</p>
+            <button onclick="window.location.href='https://wa.me/***********'">سفارش دهید</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>تماس با ما</h2>
+    <form onsubmit="alert('پیام شما دریافت شد. در کوتاه‌ترین زمان با شما تماس می‌گیریم.'); return false;">
+        <input type="text" placeholder="نام شما" required>
+        <input type="tel" placeholder="شماره تماس" required>
+        <textarea placeholder="پیام شما" rows="4" required></textarea>
+        <button class="submit" type="submit">ارسال پیام</button>
+    </form>
+</section>
+
+<section id="social">
+    <h2>ما را دنبال کنید</h2>
+    <div class="social">
+        <a href="https://instagram.com/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.74 0 5.333.007 4.522.041 3.715.074 3.148.18 2.697.348a3.29 3.29 0 0 0-1.2.785 3.29 3.29 0 0 0-.785 1.2C.18 2.852.074 3.415.041 4.222.007 5.033 0 5.44 0 8s.007 2.967.041 3.778c.033.807.139 1.37.348 1.821.18.434.42.832.785 1.2a3.29 3.29 0 0 0 1.2.785c.451.209 1.014.315 1.821.348C5.333 15.993 5.74 16 8 16s2.967-.007 3.778-.041c.807-.033 1.37-.139 1.821-.348a3.29 3.29 0 0 0 1.2-.785 3.29 3.29 0 0 0 .785-1.2c.209-.451.315-1.014.348-1.821.034-.811.041-1.218.041-3.778s-.007-2.967-.041-3.778c-.033-.807-.139-1.37-.348-1.821a3.29 3.29 0 0 0-.785-1.2 3.29 3.29 0 0 0-1.2-.785c-.451-.209-1.014-.315-1.821-.348C10.967.007 10.56 0 8 0zm0 1.44c2.228 0 2.49.008 3.369.044.817.034 1.26.152 1.553.253.386.125.664.274.953.563.288.289.438.567.563.953.101.293.219.736.253 1.553.036.879.044 1.141.044 3.369s-.008 2.49-.044 3.369c-.034.817-.152 1.26-.253 1.553a2.01 2.01 0 0 1-.563.953 2.01 2.01 0 0 1-.953.563c-.293.101-.736.219-1.553.253-.879.036-1.141.044-3.369.044s-2.49-.008-3.369-.044c-.817-.034-1.26-.152-1.553-.253a2.01 2.01 0 0 1-.953-.563 2.01 2.01 0 0 1-.563-.953c-.101-.293-.219-.736-.253-1.553-.036-.879-.044-1.141-.044-3.369s.008-2.49.044-3.369c.034-.817.152-1.26.253-1.553.125-.386.274-.664.563-.953.289-.288.567-.438.953-.563.293-.101.736-.219 1.553-.253.879-.036 1.141-.044 3.369-.044zm0 3.44a3.12 3.12 0 1 0 0 6.24 3.12 3.12 0 0 0 0-6.24zm0 5.16a2.04 2.04 0 1 1 0-4.08 2.04 2.04 0 0 1 0 4.08zm4.52-5.44a.72.72 0 1 1-1.44 0 .72.72 0 0 1 1.44 0z"/></svg>
+            اینستاگرام
+        </a>
+        <a href="https://wa.me/***********">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326a7.97 7.97 0 0 0-11.2 0 7.92 7.92 0 0 0-2.326 5.601c0 1.392.363 2.753 1.05 3.967L.003 15l2.121-1.422a7.932 7.932 0 0 0 3.967 1.05 7.92 7.92 0 0 0 5.601-2.326 7.97 7.97 0 0 0 0-11.2zm-1.414 9.786c-.213.596-1.2 1.142-1.65 1.212-.441.068-.97.092-2.1-.333-1.073-.406-1.763-.906-2.64-1.781-.872-.872-1.374-1.568-1.781-2.64-.425-1.129-.401-1.659-.333-2.1.07-.45.616-1.437 1.212-1.65.546-.205 1.138-.147 1.377-.147.242 0 .486.027.699.027.208 0 .41.014.594.014.184 0 .453-.02.688.007.234.026.586.148.832.294.246.146.56.347.799.604.238.256.526.546.74.86.213.313.392.635.543.957.149.321.279.619.415.97.134.35.06.646-.012.758-.071.111-.346.557-.476.747-.132.191-.27.379-.392.535-.124.157-.245.31-.389.465-.144.155-.219.231-.354.345-.134.114-.224.189-.359.283-.135.094-.254.18-.378.262-.124.082-.192.135-.293.208-.102.073-.192.14-.275.205-.083.066-.137.1-.195.156-.058.057-.099.104-.153.158-.053.054-.126.124-.174.17-.048.047-.108.08-.154.12-.045.039-.09.075-.133.109-.043.034-.082.064-.124.092-.043.028-.112.06-.157.078-.045.018-.101.022-.146.03-.045.008-.109.01-.154.006-.045-.005-.083-.019-.127-.033-.045-.015-.09-.036-.134-.058-.043-.022-.096-.041-.138-.07-.043-.029-.074-.067-.112-.1-.038-.033-.069-.067-.1-.101-.03-.034-.063-.067-.093-.104-.03-.037-.053-.072-.082-.108-.03-.036-.064-.074-.09-.113-.027-.039-.054-.08-.079-.122-.026-.042-.048-.085-.07-.129-.023-.043-.049-.089-.067-.135-.02-.046-.031-.093-.048-.14-.018-.048-.03-.096-.038-.145-.01-.048-.009-.097
