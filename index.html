@@ -1,247 +1,189 @@
-‏<!DOCTYPE html>
-‏<html lang="fa">
-‏<head>
-‏<meta charset="UTF-8">
-‏<meta name="viewport" content="width=device-width, initial-scale=1.0">
-‏<title>اصفهان کناف پلاس</title>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاسبه‌گر کناف</title>
 
-‏<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: sans-serif;
+        background: #f2f6fa;
+        margin: 0;
+        padding: 20px;
+        direction: rtl;
+        text-align: center;
+    }
 
-‏<style>
-‏/* ======== BASE ======== */
-‏body {
-‏    font-family: 'Vazirmatn', sans-serif;
-‏    margin:0;
-‏    padding:0;
-‏    direction:rtl;
-‏    background:#f4f4f4;
-‏    color:#333;
-‏    scroll-behavior:smooth;
-}
-‏a { text-decoration:none; color:inherit; }
-‏h2 { text-align:center; font-size:28px; margin-bottom:40px; }
+    .container {
+        width: 100%;
+        max-width: 480px;
+        margin: auto;
+    }
 
-‏/* ======== HEADER ======== */
-‏header {
-‏    background:linear-gradient(135deg,#0288d1,#01579b);
-‏    color:white;
-‏    padding:50px 20px;
-‏    text-align:center;
-‏    position:relative;
-}
-‏header img {
-‏    width:150px;
-‏    margin-bottom:20px;
-}
-‏header h1 {
-‏    font-size:34px;
-‏    margin:0;
-}
-‏header p {
-‏    font-size:18px;
-‏    margin:12px 0 20px;
-}
-‏header a {
-‏    background:white;
-‏    color:#01579b;
-‏    padding:12px 28px;
-‏    border-radius:40px;
-‏    font-weight:bold;
-‏    display:inline-block;
-‏    margin-top:10px;
-}
+    .header-box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid #1e7dd6;
+        margin-bottom: 15px;
+    }
 
-‏/* ======== SECTIONS ======== */
-‏section {
-‏    padding:60px 20px;
-‏    max-width:1200px;
-‏    margin:auto;
-}
+    .logo {
+        width: 110px;
+        margin-bottom: 10px;
+    }
 
-‏/* ======== SLIDER ======== */
-‏.slider { position:relative; overflow:hidden; border-radius:12px; }
-‏.slides { display:flex; transition:0.6s ease-in-out; }
-‏.slide { min-width:100%; opacity:0.75; transform:scale(0.95); transition:0.4s; }
-‏.slide.active { opacity:1; transform:scale(1); }
-‏.slide img { width:100%; height:300px; object-fit:cover; border-radius:12px; }
-‏.slider-buttons {
-‏    position:absolute; top:50%; width:100%;
-‏    display:flex; justify-content:space-between;
-}
-‏.slider-buttons button {
-‏    background:rgba(0,0,0,0.55);
-‏    color:white;
-‏    border:none;
-‏    padding:12px;
-‏    border-radius:50%;
-‏    cursor:pointer;
-‏    font-size:20px;
-}
+    .title {
+        color: #1e7dd6;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-‏/* ======== PRODUCT CARDS ======== */
-‏.grid {
-‏    display:flex;
-‏    flex-wrap:wrap;
-‏    gap:25px;
-‏    justify-content:center;
-}
-‏.card {
-‏    background:white;
-‏    width:280px;
-‏    border-radius:12px;
-‏    overflow:hidden;
-‏    box-shadow:0 6px 20px rgba(0,0,0,0.12);
-‏    transition:0.3s;
-}
-‏.card:hover {
-‏    transform:translateY(-8px);
-}
-‏.card img {
-‏    width:100%; height:180px; object-fit:cover;
-}
-‏.card h3 {
-‏    margin:15px 10px 5px;
-‏    font-size:20px;
-}
-‏.card p {
-‏    margin:5px 10px 15px;
-}
-‏.card button {
-‏    margin:0 10px 15px;
-‏    width:90%;
-‏    background:#0288d1;
-‏    color:white;
-‏    border:none;
-‏    padding:12px;
-‏    border-radius:40px;
-‏    font-weight:bold;
-‏    cursor:pointer;
-}
+    .insta-btn {
+        background: #1e7dd6;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+        display: inline-block;
+        text-decoration: none;
+    }
 
-‏/* ======== INFO BOX (CONTACT) ======== */
-‏.info-box {
-‏    background:white;
-‏    padding:25px;
-‏    border-radius:12px;
-‏    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-‏    max-width:650px;
-‏    margin:auto;
-‏    line-height:2;
-‏    font-size:17px;
-}
-‏.info-box b { color:#0288d1; }
+    .box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+    }
 
-‏/* ======== FOOTER ======== */
-‏footer {
-‏    background:#01579b;
-‏    color:white;
-‏    text-align:center;
-‏    padding:20px;
-‏    margin-top:40px;
-}
+    label {
+        font-size: 14px;
+        font-weight: bold;
+    }
 
-‏/* ======== RESPONSIVE ======== */
-‏@media(max-width:768px){
-‏    header h1 { font-size:28px; }
-‏    header img { width:120px; }
-‏    .slide img { height:220px; }
-}
-‏</style>
-‏</head>
+    select, input {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #bbb;
+        font-size: 16px;
+    }
 
+    button {
+        margin-top: 15px;
+        width: 100%;
+        padding: 14px;
+        background: #1e7dd6;
+        color: #fff;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+    }
 
-‏<body>
+    .result {
+        background: #e2f2ff;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 15px;
+        border: 1px solid #1e7dd6;
+        display: none;
+        text-align: right;
+        font-size: 16px;
+        line-height: 28px;
+    }
+</style>
+</head>
 
-‏<!-- ========== HEADER ========== -->
-‏<header>
-‏    <img src="logo.png" alt="لوگو اصفهان کناف پلاس">
-‏    <h1>گروه اصفهان کناف پلاس</h1>
-‏    <p>تأمین‌کننده و مجری تخصصی انواع سقف‌های کاذب و پروفیل‌های نور خطی</p>
-‏    <a href="#contact">تماس با ما</a>
-‏</header>
+<body>
 
-‏<!-- ========== PORTFOLIO ========== -->
-‏<section id="portfolio">
-‏    <h2>نمونه کارها</h2>
+<div class="container">
 
-‏    <div class="slider" id="slider">
-‏        <div class="slides">
-‏            <div class="slide active"><img src="project1.jpg"></div>
-‏            <div class="slide"><img src="project2.jpg"></div>
-‏            <div class="slide"><img src="project3.jpg"></div>
-‏        </div>
+    <div class="header-box">
+        <img src="logo.png" class="logo">
+        <div class="title">Esfahan Knauf Plus</div>
+        <div>@esfahan_knauf_plus</div>
+        <a class="insta-btn" href="https://instagram.com/esfahan_knauf_plus">مشاهده پیج</a>
+    </div>
 
-‏        <div class="slider-buttons">
-‏            <button onclick="prevSlide()">❮</button>
-‏            <button onclick="nextSlide()">❯</button>
-‏        </div>
-‏    </div>
-‏</section>
+    <div class="box">
+        <h2 style="color:#1e7dd6;">محاسبه‌گر مصالح کناف</h2>
 
-‏<!-- ========== PRODUCTS ========== -->
-‏<section id="products">
-‏    <h2>محصولات قابل فروش</h2>
+        <label>نوع سازه:</label>
+        <select id="type">
+            <option value="ceiling">سقف کناف</option>
+            <option value="wall">دیوار کناف</option>
+        </select>
 
-‏    <div class="grid">
+        <label>متراژ کل (متر مربع):</label>
+        <input id="area" type="number" placeholder="مثلاً 25">
 
-‏        <div class="card">
-‏            <img src="led1.jpg">
-‏            <h3>نور مخفی LED</h3>
-‏            <p>قیمت: 500,000 تومان</p>
-‏            <button>سفارش</button>
-‏        </div>
+        <div id="ceiling">
+            <label>پروفیل F (متر / m²)</label>
+            <input id="fRate" type="number" value="2.8">
 
-‏        <div class="card">
-‏            <img src="panel.jpg">
-‏            <h3>پنل سقفی</h3>
-‏            <p>قیمت: 350,000 تومان</p>
-‏            <button>سفارش</button>
-‏        </div>
+            <label>پروفیل عمومی U (متر / m²)</label>
+            <input id="uRate" type="number" value="1.2">
+        </div>
 
-‏    </div>
-‏</section>
+        <div id="wall" style="display:none;">
+            <label>رانر (متر / m²)</label>
+            <input id="runnerRate" type="number" value="0.9">
 
-‏<!-- ========== CONTACT & INFO ========== -->
-‏<section id="contact">
-‏    <h2>اطلاعات تماس</h2>
+            <label>استاد (متر / m²)</label>
+            <input id="studRate" type="number" value="2.5">
+        </div>
 
-‏    <div class="info-box">
+        <button onclick="calc()">محاسبه</button>
 
-‏        <b>آدرس:</b><br>
-        اصفهان - خیابان فردوسی - پاساژ نوید - واحد ۱۳۷
-‏        <br><br>
+        <div id="result" class="result"></div>
+    </div>
 
-‏        <b>شماره‌های تماس:</b><br>
-‏        09132359599<br>
-‏        09139659265<br>
-        03131315248
-‏        <br><br>
+</div>
 
-‏        <b>ساعات کاری:</b><br>
-        شنبه تا چهارشنبه — ۸:۳۰ تا ۱۴ و ۱۷ تا ۲۰<br>
-        پنج‌شنبه — ۸:۳۰ تا ۱۴
-‏    </div>
-‏</section>
+<script>
+    document.getElementById("type").addEventListener("change", function () {
+        if (this.value === "ceiling") {
+            document.getElementById("ceiling").style.display = "block";
+            document.getElementById("wall").style.display = "none";
+        } else {
+            document.getElementById("ceiling").style.display = "none";
+            document.getElementById("wall").style.display = "block";
+        }
+    });
 
-‏<!-- ========== FOOTER ========== -->
-‏<footer>
-    © تمامی حقوق برای گروه اصفهان کناف پلاس محفوظ است.
-‏</footer>
+    function calc() {
+        let type = document.getElementById("type").value;
+        let area = Number(document.getElementById("area").value);
 
-‏<!-- ========== SLIDER SCRIPT ========== -->
-‏<script>
-‏let index = 0;
-‏function showSlide(i){
-‏    let slides = document.querySelectorAll('.slide');
-‏    slides.forEach(s => s.classList.remove('active'));
-‏    index = (i + slides.length) % slides.length;
-‏    slides[index].classList.add('active');
-‏    document.querySelector('.slides').style.transform = `translateX(-${index*100}%)`;
-}
-‏function nextSlide(){ showSlide(index+1); }
-‏function prevSlide(){ showSlide(index-1); }
-‏setInterval(nextSlide, 4000);
-‏</script>
+        if (!area || area <= 0) {
+            alert("متراژ را وارد کنید");
+            return;
+        }
 
-‏</body>
-‏</html>
+        let output = "";
+
+        if (type === "ceiling") {
+            let f = (Number(document.getElementById("fRate").value) * area).toFixed(1);
+            let u = (Number(document.getElementById("uRate").value) * area).toFixed(1);
+
+            output =
+                "پروفیل F مورد نیاز: " + f + " متر<br>" +
+                "پروفیل عمومی U: " + u + " متر";
+        } else {
+            let runner = (Number(document.getElementById("runnerRate").value) * area).toFixed(1);
+            let stud = (Number(document.getElementById("studRate").value) * area).toFixed(1);
+
+            output =
+                "رانر مورد نیاز: " + runner + " متر<br>" +
+                "استاد مورد نیاز: " + stud + " متر";
+        }
+
+        let box = document.getElementById("result");
+        box.innerHTML = output;
+        box.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
