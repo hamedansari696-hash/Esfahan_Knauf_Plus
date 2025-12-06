@@ -1,11 +1,125 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>Esfahan Knauf Plus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اصفهان کناف پلاس</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f8f8f8;
+            text-align: center;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        header img {
+            width: 120px;
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+        }
+
+        .intro {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        /* اسلایدر */
+        .slider img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* گالری */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        .btns {
+            margin: 25px 0;
+        }
+
+        .btns a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #222;
+            color: #eee;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
 </head>
+
 <body>
-<img src="logo.png" width="150"><h1>Esfahan Knauf Plus</h1>
-<p>لطفاً تصاویر نمونه کارها را پس از آپلود در گیت‌هاب جایگزین کنید.</p>
+
+<header>
+    <img src="logo.png">
+    <h1>اصفهان کناف پلاس</h1>
+</header>
+
+<div class="intro">
+    اجرای تخصصی سقف کاذب، کناف، نورپردازی و دکوراسیون داخلی
+</div>
+
+<!-- اسلایدر (۳ عکس اول) -->
+<div class="slider">
+    <img src="sample01.jpeg">
+    <img src="sample02.jpeg">
+    <img src="sample03.jpeg">
+</div>
+
+<h2>نمونه‌کارهای ما</h2>
+
+<!-- گالری -->
+<div class="gallery">
+    <img src="sample01.jpeg">
+    <img src="sample02.jpeg">
+    <img src="sample03.jpeg">
+    <img src="sample04.jpeg">
+    <img src="sample05.jpeg">
+    <img src="sample06.jpeg">
+    <img src="sample07.jpeg">
+    <img src="sample08.jpeg">
+    <img src="sample09.jpeg">
+    <img src="sample10.jpeg">
+</div>
+
+<div class="btns">
+    <a href="tel:09300000000">تماس</a>
+    <a href="https://wa.me/989300000000">واتساپ</a>
+    <a href="price.pdf">دانلود لیست قیمت</a>
+</div>
+
+<footer>
+    © تمامی حقوق محفوظ است - اصفهان کناف پلاس
+</footer>
+
 </body>
 </html>
