@@ -1,24 +1,141 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>نمونه‌کارها</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اصفهان کناف پلاس</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background: #1a73e8;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 25px;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* گالری */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        }
+
+        /* PDF */
+        .pdf-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #1a73e8;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: #1a73e8;
+            color: white;
+            text-align: center;
+            line-height: 2;
+        }
+
+        a {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<h1>۱۰ نمونه‌کار</h1>
-<div class="gallery">
-<div class="item"><img src="sample01.jpeg"></div>
-<div class="item"><img src="sample02.JPEG"></div>
-<div class="item"><img src="sample03.jpeg"></div>
-<div class="item"><img src="sample04.JPEG"></div>
-<div class="item"><img src="sample05.jpeg"></div>
-<div class="item"><img src="sample06.jpeg"></div>
-<div class="item"><img src="sample07.JPEG"></div>
-<div class="item"><img src="sample08.JPEG"></div>
-<div class="item"><img src="sample09.JPEG"></div>
-<div class="item"><img src="sample10.JPEG"></div>
 
+<header>
+    اصفهان کناف پلاس
+</header>
+
+<!-- لیست قیمت -->
+<div class="section">
+    <h2>لیست قیمت</h2>
+
+    <div class="pdf-box">
+        <!-- فایل PDF باید کنار index.html با نام زیر باشد -->
+        <iframe src="price-list.pdf" class="pdf-frame"></iframe>
+
+        <a href="price-list.pdf" class="download-btn" download>
+            دانلود فایل PDF لیست قیمت
+        </a>
+    </div>
 </div>
+
+<!-- نمونه‌کارها -->
+<div class="section">
+    <h2>۱۰ نمونه‌کار</h2>
+
+    <div class="gallery">
+        <img src="sample01.jpeg">
+        <img src="sample02.jpeg">
+        <img src="sample03.jpeg">
+        <img src="sample04.jpeg">
+        <img src="sample05.jpeg">
+        <img src="sample06.jpeg">
+        <img src="sample07.jpeg">
+        <img src="sample08.jpeg">
+        <img src="sample09.jpeg">
+        <img src="sample10.jpeg">
+    </div>
+</div>
+
+<footer>
+    تماس: <a href="tel:09130285886">09130285886</a><br>
+    اینستاگرام: <a href="#">instagram.com/Esfahan_Knauf_Plus</a>
+</footer>
+
 </body>
 </html>
