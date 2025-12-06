@@ -1,362 +1,247 @@
-<!doctype html>
-<html lang="fa">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Esfahan Knauf Plus</title>
+‏<!DOCTYPE html>
+‏<html lang="fa">
+‏<head>
+‏<meta charset="UTF-8">
+‏<meta name="viewport" content="width=device-width, initial-scale=1.0">
+‏<title>اصفهان کناف پلاس</title>
 
-  <!-- Basic SEO -->
-  <meta name="description" content="Esfahan Knauf Plus — خدمات سقف و دیوار کناف، نمونه‌کارها، تماس" />
-  <meta name="keywords" content="کناف, سقف کاذب, دیوارکاذب, Esfahan Knauf Plus" />
+‏<link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
 
-  <!-- Fonts (system fallback included) -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+‏<style>
+‏/* ======== BASE ======== */
+‏body {
+‏    font-family: 'Vazirmatn', sans-serif;
+‏    margin:0;
+‏    padding:0;
+‏    direction:rtl;
+‏    background:#f4f4f4;
+‏    color:#333;
+‏    scroll-behavior:smooth;
+}
+‏a { text-decoration:none; color:inherit; }
+‏h2 { text-align:center; font-size:28px; margin-bottom:40px; }
 
-  <style>
-    :root{
-      --brand:#0b78d6;       /* آبی برند (با لوگو هماهنگ) */
-      --dark:#111217;
-      --muted:#6b7280;
-      --bg:#ffffff;
-      --glass: rgba(255,255,255,0.06);
-      --radius:12px;
-      --container:1100px;
-    }
+‏/* ======== HEADER ======== */
+‏header {
+‏    background:linear-gradient(135deg,#0288d1,#01579b);
+‏    color:white;
+‏    padding:50px 20px;
+‏    text-align:center;
+‏    position:relative;
+}
+‏header img {
+‏    width:150px;
+‏    margin-bottom:20px;
+}
+‏header h1 {
+‏    font-size:34px;
+‏    margin:0;
+}
+‏header p {
+‏    font-size:18px;
+‏    margin:12px 0 20px;
+}
+‏header a {
+‏    background:white;
+‏    color:#01579b;
+‏    padding:12px 28px;
+‏    border-radius:40px;
+‏    font-weight:bold;
+‏    display:inline-block;
+‏    margin-top:10px;
+}
 
-    /* Reset & base */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: 'Vazirmatn', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--dark);
-      background:#f6f7fb;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
-    }
+‏/* ======== SECTIONS ======== */
+‏section {
+‏    padding:60px 20px;
+‏    max-width:1200px;
+‏    margin:auto;
+}
 
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block;height:auto}
+‏/* ======== SLIDER ======== */
+‏.slider { position:relative; overflow:hidden; border-radius:12px; }
+‏.slides { display:flex; transition:0.6s ease-in-out; }
+‏.slide { min-width:100%; opacity:0.75; transform:scale(0.95); transition:0.4s; }
+‏.slide.active { opacity:1; transform:scale(1); }
+‏.slide img { width:100%; height:300px; object-fit:cover; border-radius:12px; }
+‏.slider-buttons {
+‏    position:absolute; top:50%; width:100%;
+‏    display:flex; justify-content:space-between;
+}
+‏.slider-buttons button {
+‏    background:rgba(0,0,0,0.55);
+‏    color:white;
+‏    border:none;
+‏    padding:12px;
+‏    border-radius:50%;
+‏    cursor:pointer;
+‏    font-size:20px;
+}
 
-    .container{
-      width:90%;
-      max-width:var(--container);
-      margin:0 auto;
-    }
+‏/* ======== PRODUCT CARDS ======== */
+‏.grid {
+‏    display:flex;
+‏    flex-wrap:wrap;
+‏    gap:25px;
+‏    justify-content:center;
+}
+‏.card {
+‏    background:white;
+‏    width:280px;
+‏    border-radius:12px;
+‏    overflow:hidden;
+‏    box-shadow:0 6px 20px rgba(0,0,0,0.12);
+‏    transition:0.3s;
+}
+‏.card:hover {
+‏    transform:translateY(-8px);
+}
+‏.card img {
+‏    width:100%; height:180px; object-fit:cover;
+}
+‏.card h3 {
+‏    margin:15px 10px 5px;
+‏    font-size:20px;
+}
+‏.card p {
+‏    margin:5px 10px 15px;
+}
+‏.card button {
+‏    margin:0 10px 15px;
+‏    width:90%;
+‏    background:#0288d1;
+‏    color:white;
+‏    border:none;
+‏    padding:12px;
+‏    border-radius:40px;
+‏    font-weight:bold;
+‏    cursor:pointer;
+}
 
-    /* NAV */
-    header{
-      position:sticky;
-      top:0;
-      z-index:80;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.5));
-      border-bottom:1px solid rgba(0,0,0,0.06);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      height:68px;
-      justify-content:space-between;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-    .brand img{width:48px;height:48px;border-radius:8px;object-fit:contain}
-    .brand h1{font-size:18px;margin:0;color:var(--brand);font-weight:700}
-    nav ul{
-      list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center;
-    }
-    nav a{
-      color:var(--dark);padding:8px 10px;border-radius:8px;font-weight:600;font-size:15px;
-    }
-    nav a:hover{background:var(--glass)}
-    .cta{
-      background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;
-      box-shadow:0 6px 18px rgba(11,120,214,0.18);
-    }
+‏/* ======== INFO BOX (CONTACT) ======== */
+‏.info-box {
+‏    background:white;
+‏    padding:25px;
+‏    border-radius:12px;
+‏    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+‏    max-width:650px;
+‏    margin:auto;
+‏    line-height:2;
+‏    font-size:17px;
+}
+‏.info-box b { color:#0288d1; }
 
-    /* Mobile menu */
-    .menu-toggle{display:none;background:transparent;border:0;font-size:20px}
-    .mobile-nav{
-      display:none;position:absolute;right:16px;left:16px;top:68px;background:#fff;padding:12px;border-radius:12px;
-      box-shadow:0 12px 40px rgba(2,6,23,0.08);
-    }
+‏/* ======== FOOTER ======== */
+‏footer {
+‏    background:#01579b;
+‏    color:white;
+‏    text-align:center;
+‏    padding:20px;
+‏    margin-top:40px;
+}
 
-    /* HERO */
-    .hero{
-      padding:56px 0 40px;
-      display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;
-    }
-    .hero-left h2{font-size:36px;margin:0 0 12px}
-    .hero-left p{color:var(--muted);margin:0 0 18px}
-    .hero-actions{display:flex;gap:12px}
-    .card{
-      background:linear-gradient(180deg,#fff,#f8fbff);
-      border-radius:14px;padding:18px;box-shadow:0 8px 30px rgba(16,24,40,0.06);
-    }
+‏/* ======== RESPONSIVE ======== */
+‏@media(max-width:768px){
+‏    header h1 { font-size:28px; }
+‏    header img { width:120px; }
+‏    .slide img { height:220px; }
+}
+‏</style>
+‏</head>
 
-    /* Services */
-    .services{padding:24px 0}
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-    }
-    .service{
-      padding:18px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,0.04);
-      text-align:center;
-    }
-    .service h3{margin:12px 0 6px;font-size:18px}
-    .service p{color:var(--muted);font-size:14px;margin:0}
 
-    /* Gallery */
-    .gallery{padding:28px 0}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .gallery-grid img{height:120px;object-fit:cover;border-radius:8px;cursor:pointer}
+‏<body>
 
-    /* About & Contact */
-    .about, .contact{padding:28px 0}
-    .about p{color:var(--muted)}
-    .contact-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .contact-form input,.contact-form textarea{
-      width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);
-      background:#fff;font-size:14px;
-    }
-    .contact-form textarea{grid-column:1/-1;min-height:120px;resize:vertical}
-    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--brand);color:#fff;font-weight:700}
+‏<!-- ========== HEADER ========== -->
+‏<header>
+‏    <img src="logo.png" alt="لوگو اصفهان کناف پلاس">
+‏    <h1>گروه اصفهان کناف پلاس</h1>
+‏    <p>تأمین‌کننده و مجری تخصصی انواع سقف‌های کاذب و پروفیل‌های نور خطی</p>
+‏    <a href="#contact">تماس با ما</a>
+‏</header>
 
-    /* Footer */
-    footer{padding:22px 0;color:var(--muted);font-size:14px;text-align:center}
+‏<!-- ========== PORTFOLIO ========== -->
+‏<section id="portfolio">
+‏    <h2>نمونه کارها</h2>
 
-    /* Lightbox */
-    .lightbox{
-      position:fixed;inset:0;background:rgba(3,6,12,0.7);display:flex;align-items:center;justify-content:center;
-      z-index:120;opacity:0;pointer-events:none;transition:opacity .25s;
-    }
-    .lightbox.show{opacity:1;pointer-events:auto}
-    .lightbox img{max-width:92%;max-height:86%;border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+‏    <div class="slider" id="slider">
+‏        <div class="slides">
+‏            <div class="slide active"><img src="project1.jpg"></div>
+‏            <div class="slide"><img src="project2.jpg"></div>
+‏            <div class="slide"><img src="project3.jpg"></div>
+‏        </div>
 
-    /* Responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .hero-left h2{font-size:28px}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .contact-form{grid-template-columns:1fr}
-      .brand h1{display:none}
-    }
-    @media (max-width:520px){
-      nav ul{display:none}
-      .menu-toggle{display:inline-block}
-      .mobile-nav{display:block}
-      .grid{grid-template-columns:1fr}
-      .gallery-grid img{height:100px}
-    }
-  </style>
-</head>
-<body>
+‏        <div class="slider-buttons">
+‏            <button onclick="prevSlide()">❮</button>
+‏            <button onclick="nextSlide()">❯</button>
+‏        </div>
+‏    </div>
+‏</section>
 
-<header>
-  <div class="container nav-inner">
-    <div class="brand">
-      <img src="logo.png" alt="Esfahan Knauf Plus logo" id="site-logo">
-      <h1>Esfahan Knauf Plus</h1>
-    </div>
+‏<!-- ========== PRODUCTS ========== -->
+‏<section id="products">
+‏    <h2>محصولات قابل فروش</h2>
 
-    <nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="menu">☰</button>
-      <ul id="mainNav">
-        <li><a href="#home">خانه</a></li>
-        <li><a href="#services">خدمات</a></li>
-        <li><a href="#gallery">نمونه‌کارها</a></li>
-        <li><a href="#about">درباره ما</a></li>
-        <li><a href="#contact" class="cta">تماس با ما</a></li>
-      </ul>
-      <!-- mobile menu (injected by JS when toggled) -->
-    </nav>
-  </div>
-</header>
+‏    <div class="grid">
 
-<main class="container" id="home">
-  <section class="hero">
-    <div class="hero-left">
-      <h2>اجرای حرفه‌ای کناف — Esfahan Knauf Plus</h2>
-      <p>تجربه‌ای بیش از حد استاندارد در نصب سقف کاذب و دیوار جداکننده — کیفیت، سرعت و زیبایی در خدمت پروژه شما.</p>
+‏        <div class="card">
+‏            <img src="led1.jpg">
+‏            <h3>نور مخفی LED</h3>
+‏            <p>قیمت: 500,000 تومان</p>
+‏            <button>سفارش</button>
+‏        </div>
 
-      <div class="hero-actions">
-        <a href="#contact" class="btn">درخواست تماس</a>
-        <a href="#gallery" class="btn" style="background:#fff;color:var(--brand);border:2px solid var(--brand)">مشاهده نمونه‌کار</a>
-      </div>
+‏        <div class="card">
+‏            <img src="panel.jpg">
+‏            <h3>پنل سقفی</h3>
+‏            <p>قیمت: 350,000 تومان</p>
+‏            <button>سفارش</button>
+‏        </div>
 
-      <div style="margin-top:18px" class="card">
-        <strong>ساعات کاری:</strong> 8:00 — 18:00 &nbsp; | &nbsp; <strong>تلفن:</strong> 0912-XXX-XXXX
-      </div>
-    </div>
+‏    </div>
+‏</section>
 
-    <aside class="card" style="text-align:center">
-      <img src="logo.png" alt="logo" style="max-width:220px;margin:0 auto 12px">
-      <p style="color:var(--muted);margin:0">ارائه خدمات کامل کناف، طراحی، مشاوره و اجرا</p>
-    </aside>
-  </section>
+‏<!-- ========== CONTACT & INFO ========== -->
+‏<section id="contact">
+‏    <h2>اطلاعات تماس</h2>
 
-  <!-- SERVICES -->
-  <section id="services" class="services">
-    <div class="container">
-      <h3>خدمات ما</h3>
-      <div class="grid" style="margin-top:12px">
-        <div class="service">
-          <img src="https://img.icons8.com/ios-filled/48/0b78d6/ceiling.png" alt="" style="width:48px;height:48px;margin:0 auto">
-          <h3>سقف کاذب</h3>
-          <p>اجرای سقف‌های طرحدار، ساده و مدرن با بهترین متریال.</p>
-        </div>
-        <div class="service">
-          <img src="https://img.icons8.com/ios-filled/48/0b78d6/worker-male.png" alt="" style="width:48px;height:48px;margin:0 auto">
-          <h3>نصاب‌های مجرب</h3>
-          <p>تیم متخصص با تجربه در پروژه‌های بزرگ و کوچک.</p>
-        </div>
-        <div class="service">
-          <img src="https://img.icons8.com/ios-filled/48/0b78d6/project.png" alt="" style="width:48px;height:48px;margin:0 auto">
-          <h3>طراحی و مشاوره</h3>
-          <p>مشاوره رایگان و طراحی اختصاصی برای هر فضا.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+‏    <div class="info-box">
 
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery">
-    <div class="container">
-      <h3>نمونه‌کارها</h3>
-      <div class="gallery-grid" style="margin-top:12px">
-        <!-- اگر عکس‌های galleryN را در ریشه آپلود کردی نامشان را عوض کن -->
-        <img src="gallery1.jpg" alt="نمونه‌کار 1" data-full="gallery1.jpg">
-        <img src="gallery2.jpg" alt="نمونه‌کار 2" data-full="gallery2.jpg">
-        <img src="gallery3.jpg" alt="نمونه‌کار 3" data-full="gallery3.jpg">
-        <img src="gallery4.jpg" alt="نمونه‌کار 4" data-full="gallery4.jpg">
-        <img src="gallery5.jpg" alt="نمونه‌کار 5" data-full="gallery5.jpg">
-        <img src="gallery6.jpg" alt="نمونه‌کار 6" data-full="gallery6.jpg">
-      </div>
-      <p style="color:var(--muted);margin-top:10px;font-size:14px">برای افزودن/جایگزینی عکس‌ها، فایل‌های `gallery1.jpg` ... را در ریشهٔ ریپازیتوری آپلود کن.</p>
-    </div>
-  </section>
+‏        <b>آدرس:</b><br>
+        اصفهان - خیابان فردوسی - پاساژ نوید - واحد ۱۳۷
+‏        <br><br>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="container">
-      <h3>درباره ما</h3>
-      <p style="margin-top:10px">Esfahan Knauf Plus با تیمی مجرب و سال‌ها تجربه در زمینه طراحی و اجرای کناف، پروژه‌های مسکونی و تجاری را با استانداردهای بالا اجرا می‌کند. ما کیفیت را اولویت خود قرار می‌دهیم و هدفمان رضایت کامل مشتری است.</p>
-    </div>
-  </section>
+‏        <b>شماره‌های تماس:</b><br>
+‏        09132359599<br>
+‏        09139659265<br>
+        03131315248
+‏        <br><br>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h3>تماس با ما</h3>
+‏        <b>ساعات کاری:</b><br>
+        شنبه تا چهارشنبه — ۸:۳۰ تا ۱۴ و ۱۷ تا ۲۰<br>
+        پنج‌شنبه — ۸:۳۰ تا ۱۴
+‏    </div>
+‏</section>
 
-      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
-        <div style="flex:1;min-width:260px" class="card">
-          <strong>آدرس:</strong> اصفهان — خیابان مثال<br>
-          <strong>تلفن:</strong> 0912-XXX-XXXX<br>
-          <strong>ایمیل:</strong> info@example.com
-        </div>
+‏<!-- ========== FOOTER ========== -->
+‏<footer>
+    © تمامی حقوق برای گروه اصفهان کناف پلاس محفوظ است.
+‏</footer>
 
-        <form class="card" style="flex:1;min-width:320px" id="contactForm" action="javascript:void(0);">
-          <div class="contact-form">
-            <input type="text" id="name" placeholder="نام و نام خانوادگی" required>
-            <input type="tel" id="phone" placeholder="شماره تماس" required>
-            <input type="email" id="email" placeholder="ایمیل (اختیاری)">
-            <input type="text" id="subject" placeholder="موضوع">
-            <textarea id="message" placeholder="پیام شما" required></textarea>
-            <button class="btn" id="sendBtn" type="submit">ارسال پیام</button>
-          </div>
-          <p id="formNote" style="color:var(--muted);font-size:13px;margin-top:10px">پیامی به ایمیل شما ارسال نخواهد شد — برای دریافت پیام، از گزینه ایمیل زیر استفاده می‌کنیم (mailto). اگر می‌خواهید فرم واقعی داشته باشید، من می‌توانم webhook یا فرم Google را اضافه کنم.</p>
-        </form>
-      </div>
+‏<!-- ========== SLIDER SCRIPT ========== -->
+‏<script>
+‏let index = 0;
+‏function showSlide(i){
+‏    let slides = document.querySelectorAll('.slide');
+‏    slides.forEach(s => s.classList.remove('active'));
+‏    index = (i + slides.length) % slides.length;
+‏    slides[index].classList.add('active');
+‏    document.querySelector('.slides').style.transform = `translateX(-${index*100}%)`;
+}
+‏function nextSlide(){ showSlide(index+1); }
+‏function prevSlide(){ showSlide(index-1); }
+‏setInterval(nextSlide, 4000);
+‏</script>
 
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div>&copy; <strong>Esfahan Knauf Plus</strong> — همه حقوق محفوظ است.</div>
-        <div style="color:var(--muted)">طراحی و ساخت با ❤️</div>
-      </div>
-    </div>
-  </footer>
-</main>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <img src="" alt="expanded">
-</div>
-
-<script>
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  menuToggle && menuToggle.addEventListener('click', () => {
-    if (mainNav.style.display === 'flex') { mainNav.style.display = ''; }
-    else { mainNav.style.display = 'flex'; mainNav.style.flexDirection = 'column'; mainNav.style.alignItems = 'center'; }
-  });
-
-  // Smooth scroll for anchors
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const href = a.getAttribute('href');
-      if(href.length>1){
-        e.preventDefault();
-        const el = document.querySelector(href);
-        if(el){
-          el.scrollIntoView({behavior:'smooth',block:'start'});
-        }
-      }
-    });
-  });
-
-  // Lightbox for gallery
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = lightbox.querySelector('img');
-  document.querySelectorAll('.gallery-grid img').forEach(img=>{
-    img.addEventListener('click', ()=>{
-      const src = img.dataset.full || img.src;
-      lbImg.src = src;
-      lightbox.classList.add('show');
-      lightbox.setAttribute('aria-hidden','false');
-    });
-  });
-  lightbox.addEventListener('click', ()=>{
-    lightbox.classList.remove('show');
-    lightbox.setAttribute('aria-hidden','true');
-    lbImg.src = '';
-  });
-
-  // Contact form: fallback with mailto (opens email app)
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = encodeURIComponent(document.getElementById('name').value.trim());
-    const phone = encodeURIComponent(document.getElementById('phone').value.trim());
-    const email = encodeURIComponent(document.getElementById('email').value.trim());
-    const subject = encodeURIComponent(document.getElementById('subject').value.trim() || 'درخواست از وب‌سایت');
-    const message = encodeURIComponent(document.getElementById('message').value.trim());
-
-    const body = `نام: ${name}%0Aتلفن: ${phone}%0Aایمیل: ${email}%0Aموضوع: ${subject}%0A%0Aپیام:%0A${message}`;
-    // change this "info@example.com" to your real email in the HTML above
-    const mailto = `mailto:info@example.com?subject=${subject}&body=${body}`;
-    window.location.href = mailto;
-  });
-
-  // Accessibility: add keyboard close for lightbox
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape' && lightbox.classList.contains('show')){
-      lightbox.classList.remove('show');
-      lbImg.src = '';
-    }
-  });
-</script>
-
-</body>
-</html>
+‏</body>
+‏</html>
