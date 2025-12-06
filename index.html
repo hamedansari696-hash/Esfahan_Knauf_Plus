@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گروه اصفهان کناف پلاس</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    line-height: 1.8;
+}
+
+/* هدر */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-bottom: 2px solid #ddd;
+}
+.header img {
+    width: 60px;
+    margin-left: 15px;
+}
+.header .title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* نوار آبی */
+.top-bar {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* معرفی */
+.intro {
+    padding: 20px;
+    background: white;
+    margin: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* دکمه‌های لیست قیمت */
+.price-box {
+    margin: 15px;
+}
+.price-btn {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+.price-content {
+    display: none;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* گالری */
+.section-title {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.gallery img {
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* فوتر */
+.footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 15px;
+}
+.footer a {
+    color: #00ffae;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- هدر -->
+<div class="header">
+    <img src="logo.png" alt="logo">
+    <div class="title">گروه اصفهان کناف پلاس</div>
+</div>
+
+<!-- نوار آبی -->
+<div class="top-bar">تامین کننده و مجری تخصصی سقف‌های کاذب و نورخطی</div>
+
+<!-- معرفی -->
+<div class="intro">
+گروه اصفهان کناف پلاس با تیمی مجرب و بیش از ۱۴ سال سابقه در زمینه تامین متریال اجرای سقف و دیوار کاذب کناف و سقف‌های کاذب مشبک با تایل ۶۰×۶۰ و همچنین اجرای انواع سیستم‌های درای‌وال در پروژه‌های مسکونی و تجاری همواره سعی در جلب رضایت کارفرمایان داشته است و همیشه اجرای با کیفیت و طبق اصول و ضوابط را سرلوحه کار خود قرار داده است.
+</div>
+
+<!-- دکمه‌های لیست قیمت -->
+<div class="price-box">
+
+    <button class="price-btn" onclick="toggleBox('p1')">لیست قیمت پروفیل چفت و قرنیز</button>
+    <div id="p1" class="price-content">
+        <embed src="chaf-garniz.pdf" width="100%" height="500px">
+    </div>
+
+    <button class="price-btn" onclick="toggleBox('p2')">لیست قیمت پروفیل نورخطی</button>
+    <div id="p2" class="price-content">
+        <embed src="light-profile.pdf" width="100%" height="500px">
+    </div>
+
+    <button class="price-btn" onclick="toggleBox('p3')">لیست قیمت پروفیل مگنتی</button>
+    <div id="p3" class="price-content">
+        <embed src="magnet-profile.pdf" width="100%" height="500px">
+    </div>
+
+    <button class="price-btn" onclick="toggleBox('p4')">لیست قیمت دریچه‌های بازدید</button>
+    <div id="p4" class="price-content">
+        <embed src="dariche.pdf" width="100%" height="500px">
+    </div>
+
+    <button class="price-btn" onclick="toggleBox('p5')">لیست قیمت سایر محصولات</button>
+    <div id="p5" class="price-content">
+        <embed src="others.pdf" width="100%" height="500px">
+    </div>
+
+</div>
+
+<script>
+function toggleBox(id) {
+    let box = document.getElementById(id);
+    box.style.display = box.style.display === "block" ? "none" : "block";
+}
+</script>
+
+<!-- گالری -->
+<div class="section-title">نمونه‌ای از آخرین کارهای گروه اصفهان کناف پلاس</div>
+
+<div class="gallery">
+    <img src="sample01.jpeg">
+    <img src="sample02.jpeg">
+    <img src="sample03.jpeg">
+    <img src="sample04.jpeg">
+    <img src="sample05.jpeg">
+    <img src="sample06.jpeg">
+    <img src="sample07.jpeg">
+    <img src="sample08.jpeg">
+    <img src="sample09.jpeg">
+    <img src="sample10.jpeg">
+</div>
+
+<!-- فوتر -->
+<div class="footer">
+    <div>اصفهان - خیابان فردوسی - پاساژ نوید - واحد ۱۳۷</div>
+    <br>
+    <div>
+        <a href="https://wa.me/989356616699" target="_blank">📱 واتساپ</a>
+        <a href="https://instagram.com/esfahan_knauf_plus" target="_blank">📷 esfahan_knauf_plus</a>
+        <a href="https://instagram.com/kelvin_lighting_group" target="_blank">📷 kelvin_lighting_group</a>
+    </div>
+    <br>
+    <div>09132359599 | 09139659265 | 03131315248</div>
+</div>
+
+</body>
+</html>
