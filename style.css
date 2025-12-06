@@ -1,0 +1,19 @@
+
+body {
+  font-family: sans-serif;
+  direction: rtl;
+  text-align: center;
+  background: #fafafa;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+.gallery .item img {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #777;
+}
