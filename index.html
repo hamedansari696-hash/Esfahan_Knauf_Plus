@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>گروه اصفهان کناف پلاس</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-light:#6BB6FF;
+  --blue-navy:#0F4C81;
+  --gray:#F2F2F2;
+  --card:#fff;
+  --text:#1f1f1f;
+  --muted:#6f7780;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--gray);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* HEADER */
+header{
+  background: linear-gradient(90deg,var(--blue-navy),var(--blue-light));
+  color:#fff;
+  padding:18px 12px;
+  text-align:center;
+}
+.logo{width:120px;display:block;margin:0 auto 6px}
+.site-title{font-size:22px;margin:0;font-weight:800}
+
+/* TOP NAV (fixed horizontal) */
+.topnav{
+  display:flex;
+  justify-content:flex-end;
+  gap:18px;
+  background:var(--card);
+  border-bottom:4px solid var(--blue-light);
+  padding:10px 18px;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.topnav a{
+  color:var(--blue-navy);
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 12px;
+  border-radius:8px;
+}
+.topnav a:hover{background:linear-gradient(90deg,var(--blue-light),rgba(107,182,255,0.08))}
+
+/* CONTAINER */
+.container{max-width:1100px;margin:20px auto;padding:0 14px}
+
+/* SECTION CARD */
+.section{
+  background:var(--card);
+  border-radius:12px;
+  padding:18px;
+  margin-bottom:18px;
+  box-shadow:0 8px 24px rgba(15,76,129,0.04);
+}
+.section h2{margin:0 0 12px;color:var(--blue-navy);font-weight:900;border-right:6px solid var(--blue-light);padding-right:10px}
+
+/* BUTTON BOX (for lists & PDFs) */
+.btn-box{
+  background:var(--blue-navy);
+  color:#fff;
+  padding:12px 14px;
+  border-radius:10px;
+  margin-bottom:10px;
+  font-weight:800;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.btn-box a{color:#fff;text-decoration:none;width:100%;display:block}
+
+/* GALLERY */
+.gallery .g-item{margin-bottom:14px;border-radius:10px;overflow:hidden;border:1px solid rgba(15,76,129,0.06)}
+.gallery img{width:100%;display:block}
+
+/* SERVICES list */
+.services ul{padding:0;margin:0;list-style:none}
+.services li{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.04);font-weight:600}
+
+/* KNOWLEDGE block */
+.knowledge .item{padding:10px 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+
+/* CERTS slider */
+.certs-wrap{position:relative;overflow:hidden;border-radius:10px;border:1px solid rgba(15,76,129,0.06)}
+.certs-track{display:flex;transition:transform .45s ease}
+.cert-card{min-width:100%;display:flex;align-items:center;justify-content:center;padding:14px}
+.cert-card img{max-width:92%;max-height:520px;border-radius:8px;object-fit:contain}
+.cert-controls{position:absolute;top:50%;left:12px;transform:translateY(-50%);display:flex;gap:8px}
+.cert-btn{background:rgba(255,255,255,0.95);border:1px solid rgba(15,76,129,0.08);padding:8px 10px;border-radius:8px;cursor:pointer;color:var(--blue-navy);font-weight:800}
+.cert-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.cert-dot{width:10px;height:10px;border-radius:50%;background:rgba(15,76,129,0.12);cursor:pointer}
+.cert-dot.active{background:var(--blue-navy)}
+
+/* CONTACT */
+.contact-row{display:flex;flex-direction:column;gap:8px}
+.contact-item{display:flex;align-items:center;gap:10px;font-weight:700}
+.contact-item img{width:22px;display:inline-block}
+
+/* FOOTER */
+footer{background:var(--card);padding:18px;text-align:center;border-top:6px solid var(--blue-light);margin-top:20px}
+footer p{margin:6px 0;color:var(--muted)}
+
+/* RESPONSIVE */
+@media (max-width:860px){
+  .topnav{flex-wrap:wrap;justify-content:center;gap:8px}
+  .cert-card img{max-height:360px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" class="logo" alt="لوگو">
+  <div class="site-title">گروه اصفهان کناف پلاس</div>
+</header>
+
+<!-- ثابت: منوی افقی -->
+<nav class="topnav" aria-label="منوی اصلی">
+  <a href="#intro">معرفی</a>
+  <a href="#prices">لیست قیمت‌ها</a>
+  <a href="#gallery">آخرین نمونه کارهای انجام شده</a>
+  <a href="#services">خدمات کناف</a>
+  <a href="#knowledge">دانستنی‌های کناف</a>
+  <a href="#certs">گواهینامه‌ها</a>
+  <a href="#testimonials">رضایت مشتریان</a>
+  <a href="#contact">ارتباط با ما</a>
+</nav>
+
+<div class="container">
+
+  <!-- INTRO (متن شما) -->
+  <section id="intro" class="section">
+    <h2>معرفی گروه اصفهان کناف پلاس</h2>
+    <p>
+      گروه اصفهان کناف پلاس با تیمی مجرب و بیش از ۱۴ سال سابقه در زمینه تامین متریال و اجرای سقف و دیوار کاذب کناف و سقف‌های کاذب مشبک با تایل ۶۰×۶۰
+      و همچنین اجرای انواع سیستم درای‌وال در پروژه‌های مسکونی و تجاری همواره سعی در جلب رضایت کارفرمایان داشته است و همیشه اجرای با کیفیت و طبق اصول و ضوابط را سرلوحه کار خود قرار داده است.
+    </p>
+  </section>
+
+  <!-- PRICES (PDF links with Persian filenames) -->
+  <section id="prices" class="section">
+    <h2>لیست قیمت‌ها</h2>
+
+    <div class="btn-box"><a href="لیست قیمت پروفیل های چفت و قرنیز.pdf" target="_blank">لیست قیمت پروفیل‌های چفت و قرنیز (PDF)</a></div>
+
+    <div class="btn-box"><a href="لیست قیمت پروفیل های نور خطی.pdf" target="_blank">لیست قیمت پروفیل‌های نور خطی (PDF)</a></div>
+
+    <div class="btn-box"><a href="لیست قیمت پروفیل های مگنتی.pdf" target="_blank">لیست قیمت پروفیل‌های مگنتی (PDF)</a></div>
+
+    <div class="btn-box"><a href="لیست قیمت دریچه های بازدید.pdf" target="_blank">لیست قیمت دریچه‌های بازدید (PDF)</a></div>
+
+    <div class="btn-box"><a href="لیست قیمت سایر محصولات.pdf" target="_blank">لیست قیمت سایر محصولات (PDF)</a></div>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="section gallery">
+    <h2>آخرین نمونه کارهای انجام شده</h2>
+    <div id="galleryBox">
+      <div style="color:var(--muted);text-align:center;padding:12px">در حال بارگذاری تصاویر...</div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section services">
+    <h2>خدمات کناف</h2>
+    <ul>
+      <li>اجرای سقف کاذب کناف ساده</li>
+      <li>اجرای سقف‌های طرح‌دار و دکوراتیو</li>
+      <li>اجرای نورپردازی خطی و هیدن</li>
+      <li>اجرای دیوارهای درای وال</li>
+      <li>اجرای سقف مشبک ۶۰×۶۰</li>
+      <li>باکس دور هالوژن و جزئیات دکوراتیو</li>
+    </ul>
+  </section>
+
+  <!-- KNOWLEDGE -->
+  <section id="knowledge" class="section knowledge">
+    <h2>دانستنی‌های کناف</h2>
+    <div class="item">• تفاوت کناف با سقف گچی سنتی</div>
+    <div class="item">• نکات مهم قبل از اجرای کناف</div>
+    <div class="item">• اصول نورپردازی در کناف</div>
+    <div class="item">• انتخاب پروفیل مناسب و نگهداری</div>
+  </section>
+
+  <!-- CERTIFICATES (slider) -->
+  <section id="certs" class="section">
+    <h2>گواهینامه‌های مهارت</h2>
+    <div class="certs-wrap" id="certsWrap">
+      <div class="certs-track" id="certsTrack">
+        <div style="padding:16px;color:var(--muted);width:100%;text-align:center">در حال بارگذاری گواهینامه‌ها...</div>
+      </div>
+      <div class="cert-controls" aria-hidden="false">
+        <button id="certPrev" class="cert-btn" aria-label="قبلی">‹</button>
+        <button id="certNext" class="cert-btn" aria-label="بعدی">›</button>
+      </div>
+      <div class="cert-dots" id="certDots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (empty for you to fill) -->
+  <section id="testimonials" class="section">
+    <h2>رضایت مشتریان</h2>
+    <div id="testimonialsBox" style="color:var(--muted);">نظرات مشتریان واقعی در این بخش قرار می‌گیرد.</div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>ارتباط با ما</h2>
+    <div class="contact-row">
+      <div class="contact-item"><img src="icons/mobile.png" alt="موبایل"> <span>09132359599</span></div>
+      <div class="contact-item"><img src="icons/mobile.png" alt="موبایل"> <span>09139659265</span></div>
+      <div class="contact-item"><img src="icons/phone.png" alt="تلفن ثابت"> <span>03131315248</span></div>
+
+      <div style="height:8px"></div>
+
+      <div class="contact-item"><img src="icons/instagram.png" alt="اینستاگرام"> <a href="https://instagram.com/esfahan_knauf_plus" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">esfahan_knauf_plus</a></div>
+
+      <div class="contact-item"><img src="icons/instagram.png" alt="اینستاگرام"> <a href="https://instagram.com/Kelvin_lighting_gorup" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">Kelvin_lighting_gorup</a></div>
+
+      <div class="contact-item"><img src="icons/whatsapp.png" alt="واتساپ"> <a href="https://wa.me/09356616699" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none">واتساپ</a></div>
+
+      <p style="margin-top:12px;color:var(--muted)">📍 اصفهان - خیابان فردوسی - پاساژ نوید - واحد ۱۳۷</p>
+    </div>
+  </section>
+
+</div><!-- container -->
+
+<footer>
+  <p>© 2025 گروه اصفهان کناف پلاس</p>
+</footer>
+
+<script>
+/* Toggle not needed (no hamburger). Gallery numeric loader and certs loader. */
+
+/* Load numbered images from folder (1.jpg,2.jpg...) */
+function loadNumberedImages(folder, containerId, maxTry=200){
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  let i = 1;
+  let foundAny = false;
+  function tryOne(){
+    if(i > maxTry){
+      if(!foundAny) container.innerHTML = '<div style="color:var(--muted);text-align:center;padding:14px">تصویری یافت نشد.</div>';
+      return;
+    }
+    const img = new Image();
+    img.src = folder + '/' + i + '.jpg';
+    img.alt = folder + '-' + i;
+    img.onload = ()=>{
+      foundAny = true;
+      const wrap = document.createElement('div');
+      wrap.className = 'g-item';
+      wrap.appendChild(img);
+      container.appendChild(wrap);
+      i++;
+      tryOne();
+    };
+    img.onerror = ()=>{
+      i++;
+      tryOne();
+    };
+  }
+  tryOne();
+}
+
+/* Load certificates and init slider */
+async function loadCertificates(){
+  const track = document.getElementById('certsTrack');
+  const dotsWrap = document.getElementById('certDots');
+  track.innerHTML = '<div style="padding:16px;color:var(--muted);width:100%;text-align:center">در حال بارگذاری...</div>';
+  dotsWrap.innerHTML = '';
+  let i=1, max=200, images=[];
+  while(i<=max){
+    const url = 'certificates/' + i + '.jpg';
+    // try to load
+    // use Promise to await load/error
+    await new Promise(resolve=>{
+      const im = new Image();
+      im.src = url;
+      im.onload = ()=>{ images.push(url); resolve(); };
+      im.onerror = ()=> resolve();
+    });
+    i++;
+  }
+  if(images.length===0){
+    track.innerHTML = '<div style="padding:16px;color:var(--muted);width:100%;text-align:center">گواهینامه‌ای یافت نشد.</div>';
+    return;
+  }
+  track.innerHTML=''; dotsWrap.innerHTML='';
+  images.forEach((src, idx)=>{
+    const card = document.createElement('div'); card.className='cert-card';
+    const im = document.createElement('img'); im.src=src; im.alt='cert-'+(idx+1);
+    card.appendChild(im); track.appendChild(card);
+    const dot = document.createElement('div'); dot.className='cert-dot'+(idx===0?' active':''); dot.dataset.i=idx;
+    dot.addEventListener('click', ()=> certGoTo(idx)); dotsWrap.appendChild(dot);
+  });
+  let index=0, total=images.length;
+  function update(){ track.style.transform = `translateX(-${index*100}%)`; dotsWrap.querySelectorAll('.cert-dot').forEach((d,i)=>d.classList.toggle('active',i===index)); }
+  window.certGoTo = function(i){ index=(i+total)%total; update(); }
+  document.getElementById('certPrev').onclick = ()=> certGoTo(index-1);
+  document.getElementById('certNext').onclick = ()=> certGoTo(index+1);
+  // swipe
+  let startX=0, moving=false, delta=0;
+  track.addEventListener('pointerdown', e=>{ moving=true; startX=e.clientX; track.style.transition='none'; });
+  window.addEventListener('pointermove', e=>{ if(!moving) return; delta = e.clientX - startX; track.style.transform = `translateX(calc(-${index*100}% + ${delta}px))`; });
+  window.addEventListener('pointerup', e=>{ if(!moving) return; moving=false; track.style.transition='transform .45s ease'; if(Math.abs(delta)>60){ if(delta<0) certGoTo(index+1); else certGoTo(index-1); } else update(); delta=0; });
+  document.addEventListener('keydown', e=>{ if(e.key==='ArrowLeft') certGoTo(index-1); if(e.key==='ArrowRight') certGoTo(index+1); });
+  // autoplay
+  let autoplay=true; setInterval(()=>{ if(autoplay) certGoTo(index+1); }, 5000);
+  track.addEventListener('mouseenter', ()=> autoplay=false); track.addEventListener('mouseleave', ()=> autoplay=true);
+  update();
+}
+
+/* start */
+document.addEventListener('DOMContentLoaded', ()=>{
+  loadNumberedImages('gallery','galleryBox',200);
+  loadCertificates();
+});
+</script>
+
+</body>
+</html>
