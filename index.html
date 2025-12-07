@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گروه اصفهان کناف پلاس</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    background: #f3f5f7;
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+}
+
+/* -------------------- هدر -------------------- */
+header {
+    background: linear-gradient(90deg, #2196f3, #0d47a1);
+    padding: 25px;
+    text-align: center;
+    color: white;
+}
+header img {
+    width: 120px;
+    margin-bottom: 10px;
+}
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+/* -------------------- منو -------------------- */
+nav {
+    background: #0d47a1;
+    padding: 12px;
+    position: relative;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    gap: 25px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav a:hover {
+    color: #bbdefb;
+}
+
+/* آیکن منوی همبرگری */
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+}
+
+/* نسخه موبایل */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #0d47a1;
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 220px;
+        padding: 15px;
+        border-radius: 0 0 0 10px;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* -------------------- بخش‌ها -------------------- */
+section {
+    padding: 25px;
+    background: white;
+    margin: 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 22px;
+    border-right: 5px solid #0d47a1;
+    padding-right: 10px;
+}
+
+/* -------------------- خدمات -------------------- */
+.services div {
+    background: #e3f2fd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+/* -------------------- گالری -------------------- */
+.gallery img, .certificates img {
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+}
+
+/* -------------------- فوتر -------------------- */
+footer {
+    background: #263238;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="لوگو">
+    <h1>گروه اصفهان کناف پلاس</h1>
+</header>
+
+<nav>
+    <div class="menu-toggle">☰</div>
+    <ul id="menuList">
+        <li><a href="#intro">معرفی</a></li>
+        <li><a href="#gallery">نمونه کارها</a></li>
+        <li><a href="#services">خدمات ما</a></li>
+        <li><a href="#certificates">گواهینامه‌ها</a></li>
+        <li><a href="#contact">ارتباط با ما</a></li>
+    </ul>
+</nav>
+
+<script>
+const menuList = document.getElementById("menuList");
+const toggleBtn = document.querySelector(".menu-toggle");
+
+// باز و بسته شدن
+toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuList.classList.toggle("show");
+});
+
+// بستن با کلیک روی صفحه
+document.addEventListener("click", (e) => {
+    if (!menuList.contains(e.target) && !toggleBtn.contains(e.target)) {
+        menuList.classList.remove("show");
+    }
+});
+</script>
+
+<section id="intro">
+    <h2>معرفی</h2>
+    <p>توضیحات معرفی گروه اصفهان کناف پلاس...</p>
+</section>
+
+<section id="gallery">
+    <h2>نمونه کارها</h2>
+    <div class="gallery" id="galleryBox"></div>
+</section>
+
+<section id="services">
+    <h2>خدمات ما</h2>
+    <div class="services">
+        <div>✔ طراحی و اجرای سقف کناف</div>
+        <div>✔ اجرای دیوار درای‌وال</div>
+        <div>✔ اجرای سقف تایل ۶۰×۶۰</div>
+        <div>✔ نورپردازی داخلی</div>
+        <div>✔ تأمین کامل متریال کناف</div>
+        <div>✔ بازسازی واحدهای مسکونی و تجاری</div>
+    </div>
+</section>
+
+<section id="certificates">
+    <h2>گواهینامه‌های مهارت</h2>
+    <div class="certificates" id="certBox"></div>
+</section>
+
+<section id="contact">
+    <h2>ارتباط با ما</h2>
+    <p>شماره‌های تماس و آدرس اینجا قرار می‌گیرد</p>
+</section>
+
+<footer>
+    © تمامی حقوق محفوظ است.
+</footer>
+
+<script>
+function loadImages(folder, targetId) {
+    const box = document.getElementById(targetId);
+    let i = 1;
+
+    function loadNext() {
+        const img = new Image();
+        img.src = `${folder}/${i}.jpg`;
+        img.onload = () => {
+            box.appendChild(img);
+            i++;
+            loadNext();
+        };
+    }
+
+    loadNext();
+}
+
+loadImages("gallery", "galleryBox");
+loadImages("certificates", "certBox");
+</script>
+
+</body>
+</html>
