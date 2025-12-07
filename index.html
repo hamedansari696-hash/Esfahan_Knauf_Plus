@@ -1,240 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گروه اصفهان کناف پلاس</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "IRANSans", sans-serif;
-            background: #f2f4f7;
-            color: #1a1a1a;
-        }
-
-        /* هدر */
-        header {
-            background: linear-gradient(to left,#0d47a1,#1976d2);
-            color: white;
-            padding: 25px;
-            text-align: center;
-            position: relative;
-        }
-
-        header img {
-            width: 130px;
-            margin-bottom: 10px;
-        }
-
-        /* همبرگری */
-        .hamburger {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            cursor: pointer;
-            width: 35px;
-            z-index: 9999;
-        }
-
-        .hamburger div {
-            width: 100%;
-            height: 4px;
-            background: white;
-            margin: 6px 0;
-            border-radius: 5px;
-            transition: 0.4s;
-        }
-
-        /* سایدبار */
-        .sidebar {
-            width: 260px;
-            height: 100vh;
-            background: #ffffff;
-            position: fixed;
-            top: 0;
-            right: -270px;
-            padding-top: 70px;
-            box-shadow: -2px 0 10px rgba(0,0,0,0.25);
-            transition: 0.4s;
-            z-index: 9998;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 15px;
-            font-size: 18px;
-            text-decoration: none;
-            color: #0d47a1;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        /* کارت‌ها */
-        section {
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #0d47a1;
-            margin-bottom: 15px;
-        }
-
-        /* دکمه‌ها */
-        .btn-box {
-            background: #1976d2;
-            padding: 15px;
-            color: white;
-            text-align: center;
-            border-radius: 10px;
-            margin: 10px 0;
-            cursor: pointer;
-            font-size: 17px;
-        }
-
-        .btn-box a {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* رضایت مشتری */
-        .testimonial {
-            background: #e3f2fd;
-            border-right: 4px solid #1976d2;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-        }
-
-        footer {
-            background: #0d47a1;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
-
-</head>
-<body>
-
-<header>
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <img src="logo.png" alt="لوگو">
-    <h1>گروه اصفهان کناف پلاس</h1>
-</header>
-
-<!-- سایدبار -->
-<div id="sidebar" class="sidebar">
-    <a href="#intro">معرفی مجموعه</a>
-    <a href="#services">خدمات کناف</a>
-    <a href="#knowledge">دانستنی‌های کناف</a>
-    <a href="#price">لیست قیمت‌ها</a>
-    <a href="#gallery">نمونه کارها</a>
-    <a href="#certs">گواهینامه‌های مهارت</a>
-    <a href="#testimonials">رضایت مشتریان</a>
-    <a href="#contact">ارتباط با ما</a>
-</div>
-
-<!-- معرفی -->
-<section id="intro">
-    <h2>معرفی گروه اصفهان کناف پلاس</h2>
-    <p>
-        گروه اصفهان کناف پلاس با تیمی مجرب و بیش از ۱۴ سال سابقه در زمینه تأمین متریال و اجرای سقف و دیوار کاذب کناف،
-        سقف‌های کاذب مشبک با تایل ۶۰×۶۰ و همچنین اجرای انواع سیستم درای‌وال در پروژه‌های مسکونی و تجاری،
-        همواره سعی در جلب رضایت کارفرمایان داشته است و همیشه اجرای با کیفیت و مطابق اصول و ضوابط را
-        سرلوحه کار خود قرار داده است.
-    </p>
-</section>
-
-<!-- خدمات -->
-<section id="services">
-    <h2>خدمات کناف</h2>
-
-    <div class="btn-box">سقف کناف ساده</div>
-    <div class="btn-box">سقف کناف دکوراتیو</div>
-    <div class="btn-box">دیوار کناف</div>
-    <div class="btn-box">سقف مشبک 60×60</div>
-    <div class="btn-box">نورپردازی مخفی</div>
-</section>
-
-<!-- دانستنی‌ها -->
-<section id="knowledge">
-    <h2>دانستنی‌های کناف</h2>
-    <div class="btn-box">مزایای کناف چیست؟</div>
-    <div class="btn-box">تفاوت کناف با رابیتس</div>
-    <div class="btn-box">درای‌وال چیست؟</div>
-</section>
-
-<!-- لیست قیمت‌ها (PDF) -->
-<section id="price">
-    <h2>لیست قیمت‌ها</h2>
-
-    <div class="btn-box">
-        <a href="ghofl-qarneez.pdf" target="_blank">لیست قیمت پروفیل‌های چفت و قرنیز (PDF)</a>
-    </div>
-
-    <div class="btn-box">
-        <a href="light-profile.pdf" target="_blank">لیست قیمت پروفیل‌های نور خطی (PDF)</a>
-    </div>
-
-    <div class="btn-box">
-        <a href="magnetic-profile.pdf" target="_blank">لیست قیمت پروفیل‌های مگنتی (PDF)</a>
-    </div>
-
-    <div class="btn-box">
-        <a href="bazdid.pdf" target="_blank">لیست قیمت دریچه‌های بازدید (PDF)</a>
-    </div>
-
-    <div class="btn-box">
-        <a href="other-products.pdf" target="_blank">لیست قیمت سایر محصولات (PDF)</a>
-    </div>
-</section>
-
-<!-- نمونه کارها -->
-<section id="gallery">
-    <h2>آخرین نمونه‌کارهای انجام‌شده</h2>
-    <p>عکس‌ها را داخل پوشه gallery قرار دهید.</p>
-</section>
-
-<!-- گواهینامه‌ها -->
-<section id="certs">
-    <h2>گواهینامه‌های مهارت</h2>
-    <p>عکس‌های پوشه certificates در این بخش نمایش داده می‌شوند.</p>
-</section>
-
-<!-- رضایت مشتری -->
-<section id="testimonials">
-    <h2>رضایت مشتریان</h2>
-
-    <p style="color:#555;">(برای افزودن رضایت مشتری اینجا div اضافه کنید)</p>
-</section>
-
-<!-- ارتباط با ما -->
-<footer id="contact">
-    <h3>ارتباط با ما</h3>
-    <p>📱 09132359599</p>
-    <p>📱 09139659265</p>
-    <p>☎ 03131315248</p>
-    <p>📸 اینستاگرام 1: esfahan_knauf_plus</p>
-    <p>📸 اینستاگرام 2: Kelvin_lighting_group</p>
-    <p>💬 واتساپ: 09356616699</p>
-</footer>
-
-<script>
-function toggleMenu() {
-    let sidebar = document.getElementById("sidebar");
-    sidebar.style.right = (sidebar.style.right === "0px") ? "-270px" : "0px";
-}
-</script>
-
-</body>
-</html>
