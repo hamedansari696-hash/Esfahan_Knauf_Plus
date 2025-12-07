@@ -1,255 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>گروه اصفهان کناف پلاس</title>
-
-<style>
-/* -------------------- بدنه -------------------- */
-body {
-    font-family: sans-serif;
-    background: #f3f5f7;
-    margin: 0;
-    padding: 0;
-    color: #1a1a1a;
-}
-
-/* -------------------- هدر -------------------- */
-header {
-    background: linear-gradient(90deg, #2196f3, #0d47a1);
-    padding: 25px;
-    text-align: center;
-    color: white;
-}
-header img {
-    width: 130px;
-    margin-bottom: 10px;
-}
-header h1 {
-    margin: 0;
-    font-size: 29px;
-}
-
-/* -------------------- منو -------------------- */
-nav {
-    background: #0d47a1;
-    padding: 12px;
-    position: relative;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: right;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-nav a:hover {
-    color: #bbdefb;
-}
-
-/* منوی همبرگری */
-.menu-toggle {
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 12px;
-}
-
-/* موبایل */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background: #0d47a1;
-        position: absolute;
-        top: 55px;
-        right: 0;
-        width: 230px;
-        padding: 15px;
-        border-radius: 0 0 0 10px;
-    }
-    nav ul.show {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* -------------------- بخش‌ها -------------------- */
-section {
-    padding: 25px;
-    background: white;
-    margin: 18px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-    font-size: 22px;
-    border-right: 5px solid #0d47a1;
-    padding-right: 10px;
-}
-
-/* -------------------- خدمات -------------------- */
-.services div {
-    background: #e3f2fd;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* -------------------- گالری -------------------- */
-.gallery img, .certificates img {
-    width: 100%;
-    margin-bottom: 12px;
-    border-radius: 10px;
-}
-
-/* -------------------- تماس -------------------- */
-.contact p {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-/* -------------------- فوتر -------------------- */
-footer {
-    background: #263238;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 15px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <img src="logo.png" alt="لوگو">
-    <h1>گروه اصفهان کناف پلاس</h1>
-</header>
-
-<nav>
-    <div class="menu-toggle">☰</div>
-    <ul id="menuList">
-        <li><a href="#about">درباره ما</a></li>
-        <li><a href="#services">خدمات ما</a></li>
-        <li><a href="#gallery">نمونه کارها</a></li>
-        <li><a href="#certificates">گواهینامه‌ها</a></li>
-        <li><a href="#contact">تماس با ما</a></li>
-    </ul>
-</nav>
-
-<script>
-const menu = document.getElementById("menuList");
-const toggle = document.querySelector(".menu-toggle");
-
-toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("show");
-});
-
-document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.classList.remove("show");
-    }
-});
-</script>
-
-<!-- -------------------- درباره ما -------------------- -->
-<section id="about">
-    <h2>درباره ما</h2>
-    <p style="font-size: 19px; line-height: 2; text-align: justify;">
-    گروه <strong>اصفهان کناف پلاس</strong> با بیش از ۱۴ سال سابقه درخشان در زمینه طراحی، تأمین متریال و اجرای تخصصی 
-    <strong>سقف و دیوار کناف، سقف‌های مشبک تایل ۶۰×۶۰، انواع نورپردازی مدرن و سیستم‌های درای‌وال</strong>  
-    فعالیت می‌کند.
-
-    ما با بهره‌گیری از نیروهای باتجربه و تجهیزات استاندارد، همواره تلاش کرده‌ایم  
-    پروژه‌ها را با بالاترین کیفیت، اجرای اصولی و در سریع‌ترین زمان ممکن به کارفرما تحویل دهیم.
-
-    هدف ما ارائه بهترین خدمات در حوزه بازسازی، نوسازی و اجرای سازه‌های سبک کناف در پروژه‌های مسکونی، تجاری و اداری است.
-    </p>
-</section>
-
-<!-- -------------------- خدمات -------------------- -->
-<section id="services">
-    <h2>خدمات ما</h2>
-    <div class="services">
-        <div>✔ طراحی و اجرای انواع سقف کناف ساده و دکوراتیو</div>
-        <div>✔ اجرای دیوار کناف درای‌وال با استاندارد روز اروپا</div>
-        <div>✔ اجرای سقف مشبک تایل ۶۰×۶۰</div>
-        <div>✔ نورپردازی حرفه‌ای، هالوژنی، خطی و دکور مدرن</div>
-        <div>✔ بازسازی کامل واحدهای مسکونی و اداری</div>
-        <div>✔ تأمین کامل متریال اورجینال کناف آلمان</div>
-        <div>✔ مشاوره رایگان جهت طراحی فضا</div>
-    </div>
-</section>
-
-<!-- -------------------- گالری -------------------- -->
-<section id="gallery">
-    <h2>نمونه کارها</h2>
-    <div id="galleryBox" class="gallery"></div>
-</section>
-
-<!-- -------------------- گواهینامه -------------------- -->
-<section id="certificates">
-    <h2>گواهینامه‌ها</h2>
-    <div id="certBox" class="certificates"></div>
-</section>
-
-<!-- -------------------- تماس -------------------- -->
-<section id="contact">
-    <h2>تماس با ما</h2>
-    <div class="contact">
-        <p>📞 09132359599</p>
-        <p>📞 09139659265</p>
-        <p>☎️ 03131315248</p>
-        <p>📍 اصفهان – خیابان فردوسی – پاساژ نوید – واحد ۱۳۷</p>
-        <p>📸 اینستاگرام: esfahan_knauf_plus</p>
-        <p>📸 kelvin_lighting_group</p>
-    </div>
-</section>
-
-<footer>
-    © تمامی حقوق متعلق به گروه اصفهان کناف پلاس است.
-</footer>
-
-<script>
-function loadImages(folder, targetId) {
-    const box = document.getElementById(targetId);
-    let i = 1;
-
-    function next() {
-        const img = new Image();
-        img.src = `${folder}/${i}.jpg`;
-        img.onload = () => {
-            box.appendChild(img);
-            i++;
-            next();
-        };
-    }
-    next();
-}
-
-loadImages("gallery", "galleryBox");
-loadImages("certificates", "certBox");
-</script>
-
-</body>
-</html>
